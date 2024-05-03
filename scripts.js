@@ -21,7 +21,15 @@ const handlingForms = {
     },
     methods: {
         addMember: function() {
-            this.members.push(this.newMember);
+
+            // se for diferente de vazio
+            
+            if (this.newMember.fname && this.newMember.lname && this.newMember.instrument) {   
+                this.members.push(this.newMember);
+                this.newMember = {};
+            }else {
+                alert('Por favor, preencha todos os campos');
+            }
         }
     }
 
